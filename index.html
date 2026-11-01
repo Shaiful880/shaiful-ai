@@ -67,7 +67,33 @@ textarea{resize:vertical;min-height:46px;max-height:130px;flex:1;background:tran
 const box=document.getElementById('messages'),input=document.getElementById('prompt'),hint=document.getElementById('hint');
 function add(text,who){const d=document.createElement('div');d.className='msg '+(who==='user'?'user':'');if(who!=='user'){const s=document.createElement('span');s.className='who';s.textContent='SHAIFUL AI';d.appendChild(s)}d.appendChild(document.createTextNode(text));box.appendChild(d);box.scrollTop=box.scrollHeight}
 function answer(q){const t=q.toLowerCase();if(t.includes('hallo')||t.includes('hi'))return'Hallo! 😊 Was möchtest du heute gemeinsam angehen?';if(t.includes('plan'))return'Gerne! Nenne mir dein Ziel und bis wann du es erreichen möchtest. Dann erstellen wir einen einfachen Schritt-für-Schritt-Plan.';if(t.includes('erklär'))return'Klar! Ich erkläre es dir einfach und Schritt für Schritt. Welches Thema meinst du?';return'Danke für deine Nachricht! Die Chat-Oberfläche funktioniert als Vorschau. Für echte, individuelle KI-Antworten muss noch ein KI-Modell über einen sicheren Server verbunden werden.'}
-function send(){const q=input.value.trim();if(!q)return;add(q,'user');input.value='';setTimeout(()=>add(answer(q),'ai'),350)}
+async function send() {
+  const q = input.value.trim();
+  if (!q) return;
+  add(q, 'user');
+  input.value = '';
+
+  const loading = 'SHAIFUL AI denkt ...';
+  add(loading, 'ai');
+
+  try {
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: q })
+    });
+    const data = await response.json();
+
+    document.querySelectorAll('.ai').forEach(el => {
+      if (el.textContent.includes(loading)) el.remove();
+    });
+
+    if (!response.ok) throw new Error(data.error || 'Fehler');
+    add(data.reply, 'ai');
+  } catch (e) {
+    add('Fehler: ' + e.message, 'ai');
+  }
+}
 function quick(q){input.value=q;send()}
 document.getElementById('send').addEventListener('click',send);input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}});
 document.getElementById('read').addEventListener('click',()=>{const last=[...box.querySelectorAll('.msg')].filter(x=>!x.classList.contains('user')).at(-1);if(last&&'speechSynthesis'in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(last.innerText.replace('SHAIFUL AI','')))}else hint.textContent='Vorlesen wird von diesem Browser nicht unterstützt.'});
