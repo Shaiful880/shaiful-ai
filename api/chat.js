@@ -27,7 +27,9 @@ module.exports = async (req, res) => {
 
     const data = await response.json();
     if (!response.ok) {
-      return res.status(502).json({ error: "KI-Verbindung fehlgeschlagen" });
+      return res.status(502).json({
+  error: data.error?.message || "Gemini API Fehler"
+});
     }
 
     const reply = data.candidates?.[0]?.content?.parts
