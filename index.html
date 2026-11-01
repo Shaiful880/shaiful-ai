@@ -1,215 +1,74 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <title>SHAIFUL AI – One AI. Infinite Possibilities.</title>
-  <meta name="description" content="Meet SHAIFUL AI – your personal AI for ideas, creativity and possibilities.">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: #080808;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 8%;
-      border-bottom: 1px solid #252525;
-    }
-    .brand { font-size: 25px; font-weight: bold; letter-spacing: 2px; }
-    .brand span { color: #d5b77a; }
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
-    }
-    nav a:hover { color: #d5b77a; }
-    .hero {
-      min-height: 650px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 90px 20px;
-      background: radial-gradient(ellipse at center, #242018 0%, #080808 65%);
-    }
-    .symbol {
-      font-size: 75px;
-      color: #d5b77a;
-      margin-bottom: 20px;
-      font-weight: 200;
-    }
-    .hero h1 {
-      font-size: clamp(45px, 9vw, 85px);
-      letter-spacing: 5px;
-      line-height: 1.1;
-    }
-    .hero h1 span { color: #d5b77a; }
-    .hero p {
-      color: #aaa;
-      max-width: 600px;
-      margin: 25px auto;
-      font-size: 18px;
-    }
-    .button {
-      display: inline-block;
-      padding: 14px 30px;
-      border-radius: 5px;
-      background: #d5b77a;
-      color: #080808;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 15px;
-    }
-    section { padding: 85px 8%; text-align: center; }
-    .eyebrow {
-      color: #d5b77a;
-      letter-spacing: 3px;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-    h2 { font-size: 36px; margin: 12px 0 18px; }
-    .intro { color: #999; max-width: 650px; margin: auto; }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 45px;
-    }
-    .feature {
-      background: #111;
-      border: 1px solid #292929;
-      border-radius: 10px;
-      padding: 30px 22px;
-      text-align: left;
-    }
-    .feature .icon { font-size: 27px; color: #d5b77a; }
-    .feature h3 { margin: 12px 0; }
-    .feature p { color: #999; font-size: 14px; }
-    .vision {
-      background: #101010;
-      border-top: 1px solid #252525;
-      border-bottom: 1px solid #252525;
-    }
-    .vision strong { color: #d5b77a; }
-    .cta { padding: 100px 20px; }
-    footer {
-      padding: 30px 8%;
-      text-align: center;
-      border-top: 1px solid #252525;
-      color: #777;
-      font-size: 13px;
-    }
-    @media(max-width: 600px) {
-      header { padding: 18px 5%; }
-      nav a { margin-left: 10px; font-size: 12px; }
-      .hero { min-height: 570px; }
-      section { padding: 65px 6%; }
-      h2 { font-size: 29px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>SHAIFUL AI — One AI. Infinite Possibilities.</title>
+<style>
+:root{--bg:#080808;--panel:#121315;--panel2:#1b1c1f;--line:#303034;--text:#f5f5f5;--muted:#aaaab0;--gold:#d5b77a;--silver:#d8dadd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Arial,sans-serif}
+button,input{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:#080808ed;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:16px 6%;backdrop-filter:blur(12px)}
+.brand{font-size:21px;font-weight:800;letter-spacing:2px}.brand span{color:var(--gold)}nav{display:flex;gap:18px}nav a{color:#c6c6c8;text-decoration:none;font-size:14px}
+main{max-width:1050px;margin:auto;padding:40px 22px 80px}.hero{text-align:center;padding:58px 10px 70px}
+.mark{width:64px;height:64px;border:1px solid #999;border-radius:18px;margin:0 auto 24px;display:grid;place-items:center;color:var(--silver);font-size:37px;font-weight:300;transform:rotate(-8deg)}
+.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px}
+h1{font-size:clamp(38px,8vw,68px);line-height:1.06;letter-spacing:-2px;margin:16px 0}h1 span{color:var(--gold)}
+.lead{max-width:650px;margin:18px auto;color:#b7b7bb;font-size:18px}
+.btn{border:1px solid var(--gold);background:var(--gold);color:#151515;padding:12px 18px;border-radius:9px;font-weight:700}.btn.secondary{background:transparent;color:var(--text);border-color:#555}
+.section-title{margin:15px 0 8px;font-size:26px}.sub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0 52px}
+.card{background:linear-gradient(145deg,#191a1d,#101113);border:1px solid var(--line);border-radius:15px;padding:20px}.symbol{font-size:24px;color:var(--gold)}.card h3{margin:9px 0 5px}.card p{color:var(--muted);margin:0;font-size:14px}
+.chatbox{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.chathead{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.avatar{width:48px;height:48px;border-radius:50%;border:1px solid #888;background:radial-gradient(ellipse at 50% 38%,#e8d5b5 0 23%,transparent 24%),radial-gradient(ellipse at 50% 105%,#b9b9bd 0 43%,transparent 44%),#292a2d;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-3px)}}
+.status{font-size:12px;color:#a8c9ad}.messages{padding:18px;min-height:180px;max-height:330px;overflow:auto}
+.msg{max-width:86%;padding:12px 14px;border-radius:13px;margin:10px 0;background:#222327;white-space:pre-wrap}.msg.user{margin-left:auto;background:#3b3325;border:1px solid #6c5937}
+.composer{display:flex;gap:8px;padding:13px;border-top:1px solid var(--line)}.composer input,.memory input{flex:1;min-width:0;background:#08090a;border:1px solid #414145;border-radius:10px;color:white;padding:12px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;padding:0 13px 14px}.small{font-size:13px;padding:9px 12px}.note{font-size:12px;color:#a0a0a5;margin:12px 0 0}
+.memory{display:flex;gap:8px;flex-wrap:wrap}.memory input{min-width:190px}
+footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;color:#888;font-size:12px}
+@media(max-width:560px){nav{gap:10px}nav a{font-size:12px}header{padding:14px 5%}.hero{padding-top:42px}.composer{flex-wrap:wrap}.composer input{flex-basis:100%}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="brand">SHAIFUL<span> AI</span></div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#vision">Vision</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="hero">
-      <div class="symbol">S</div>
-      <h1>SHAIFUL<span> AI</span></h1>
-      <p>One AI. Infinite Possibilities.<br>
-      Your personal intelligence for a world without limits.</p>
-      <a class="button" href="#features">Discover the future</a>
-    </div>
-
-    <section id="about">
-      <div class="eyebrow">A new beginning</div>
-      <h2>More than just AI.</h2>
-      <p class="intro">
-        SHAIFUL AI is a vision for a smarter, more creative and more
-        connected future. One platform bringing intelligence,
-        imagination and possibilities together.
-      </p>
-    </section>
-
-    <section id="features">
-      <div class="eyebrow">The possibilities</div>
-      <h2>One universe. Many abilities.</h2>
-      <p class="intro">A growing vision for your personal AI platform.</p>
-
-      <div class="features">
-        <article class="feature">
-          <div class="icon">✧</div>
-          <h3>AI Assistant</h3>
-          <p>Get help with questions, ideas, learning and everyday tasks.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">◈</div>
-          <h3>Creative Studio</h3>
-          <p>Explore new ideas, stories, images and creative possibilities.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">◎</div>
-          <h3>AI Memory</h3>
-          <p>A vision for personal context and user-controlled memories.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">⌘</div>
-          <h3>AI Council</h3>
-          <p>Compare different AI perspectives and examine ideas critically.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">◇</div>
-          <h3>AI Universe</h3>
-          <p>Discover interactive worlds, characters and experiences.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">↗</div>
-          <h3>Personal Growth</h3>
-          <p>Organize goals, plans and progress in one place.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="vision" id="vision">
-      <div class="eyebrow">Our vision</div>
-      <h2>The future starts with an idea.</h2>
-      <p class="intro">
-        We believe technology should empower people.
-        SHAIFUL AI begins with one ambitious idea:
-        make powerful AI experiences more personal and accessible.
-      </p>
-      <p style="margin-top:25px;color:#aaa;">
-        Built with ambition. Designed for possibilities.
-      </p>
-    </section>
-
-    <section class="cta">
-      <div class="eyebrow">The beginning</div>
-      <h2>Welcome to SHAIFUL AI.</h2>
-      <p class="intro">One AI. Infinite Possibilities.</p>
-      <a class="button" href="#about">Explore our vision</a>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 SHAIFUL AI. All rights reserved.<br>
-    A project in development.
-  </footer>
-</body>
-</html>
+<header><div class="brand">SHAIFUL <span>AI</span></div><nav><a href="#features">Features</a><a href="#chat">Chat</a><a href="#memory">Memory</a></nav></header>
+<main>
+<section class="hero"><div class="mark">S</div><div class="eyebrow">A new beginning</div>
+<h1>One AI. <span>Infinite Possibilities.</span></h1>
+<p class="lead">Deine persönliche KI für Gespräche, Ideen und neue Möglichkeiten. Entwickelt mit einer großen Vision.</p>
+<a href="#chat"><button class="btn">SHAIFUL AI entdecken</button></a></section>
+<section id="features"><div class="eyebrow">Die Möglichkeiten</div><h2 class="section-title">Ein Universum. Viele Fähigkeiten.</h2><p class="sub">Die Vision einer persönlichen KI-Plattform.</p>
+<div class="grid">
+<div class="card"><div class="symbol">✧</div><h3>AI Assistant</h3><p>Hilfe bei Fragen, Lernen, Ideen und Alltag.</p></div>
+<div class="card"><div class="symbol">◈</div><h3>Live Voice</h3><p>Sprachsteuerung und Vorlesen in unterstützten Browsern.</p></div>
+<div class="card"><div class="symbol">◎</div><h3>AI Avatar</h3><p>Ein Cartoon-Avatar als visuelle Begleitung.</p></div>
+<div class="card"><div class="symbol">⌘</div><h3>AI Memory</h3><p>Notizen lokal speichern, ansehen und wieder löschen.</p></div>
+<div class="card"><div class="symbol">◇</div><h3>AI Council</h3><p>Mehrere Perspektiven vergleichen und Ideen prüfen.</p></div>
+<div class="card"><div class="symbol">↗</div><h3>Creative Universe</h3><p>Geschichten, Ideen und interaktive Erlebnisse.</p></div>
+</div></section>
+<section id="chat"><div class="eyebrow">Erster Prototyp</div><h2 class="section-title">Sprich mit SHAIFUL AI</h2><p class="sub">Die Oberfläche ist vorbereitet. Eine echte KI ist noch nicht verbunden.</p>
+<div class="chatbox"><div class="chathead"><div class="avatar" aria-label="Cartoon-Avatar-Demo"></div><div><strong>SHAIFUL AI</strong><div class="status">● Avatar-Demo</div></div></div>
+<div class="messages" id="messages"><div class="msg">Hallo! Ich bin der SHAIFUL-AI-Prototyp. Die echte KI-Verbindung wird später sicher über einen Server eingerichtet.</div></div>
+<div class="composer"><input id="prompt" placeholder="Schreibe oder diktiere eine Nachricht…" autocomplete="off"><button class="btn" id="send">Senden</button></div>
+<div class="tools"><button class="btn secondary small" id="voice">🎙️ Spracheingabe</button><button class="btn secondary small" id="speak">🔊 Antwort vorlesen</button><button class="btn secondary small" id="stop">Stimme stoppen</button></div></div>
+<p class="note">Mikrofonfunktionen benötigen Browser-Unterstützung und deine Freigabe. Dies ist noch kein echtes Live-Gespräch und kein Videoanruf mit einem animierten KI-Avatar.</p></section>
+<section id="memory" style="margin-top:48px"><div class="eyebrow">Dein Gedächtnis</div><h2 class="section-title">AI Memory – deine Notizen</h2><p class="sub">Diese Demo speichert Notizen lokal in diesem Browser auf diesem Gerät.</p>
+<div class="card"><div class="memory"><input id="memoryInput" placeholder="Eine Notiz speichern…"><button class="btn" id="saveMemory">Speichern</button></div><div id="memoryList" style="margin-top:15px;color:#c5c5c8"></div><button class="btn secondary small" id="clearMemory" style="margin-top:14px">Alle Notizen löschen</button></div>
+<p class="note">Das ist kein Cloud-Gedächtnis. Browserdaten können verloren gehen. Bitte keine Passwörter, Bankdaten oder andere Geheimnisse speichern.</p></section>
+<section style="margin-top:55px;text-align:center"><div class="eyebrow">Unsere Vision</div><h2 class="section-title">Die Zukunft beginnt mit einer Idee.</h2><p class="lead">Datenschutz, Sicherheit und Kontrolle sollen von Anfang an dazugehören. Sicherheitsversprechen werden erst nach technischen Prüfungen gemacht.</p></section>
+</main><footer>© 2026 SHAIFUL AI. All rights reserved. · Projekt in Entwicklung</footer>
+<script>
+const $=id=>document.getElementById(id),box=$('messages');let lastReply='Die echte SHAIFUL-AI-Engine ist noch nicht verbunden. Dies ist ein erster Prototyp.';
+function add(t,who=''){const d=document.createElement('div');d.className='msg '+who;d.textContent=t;box.append(d);box.scrollTop=box.scrollHeight}
+function send(){const v=$('prompt').value.trim();if(!v)return;add(v,'user');$('prompt').value='';lastReply='Danke für deine Nachricht! Die echte KI wird später sicher verbunden. Im Moment ist dies eine Demo.';add(lastReply)}
+$('send').onclick=send;$('prompt').addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+$('speak').onclick=()=>{if(!('speechSynthesis'in window)){alert('Vorlesen wird hier nicht unterstützt.');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(lastReply);u.lang='de-DE';speechSynthesis.speak(u)};
+$('stop').onclick=()=>{if('speechSynthesis'in window)speechSynthesis.cancel()};
+$('voice').onclick=()=>{let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Spracheingabe wird in diesem Browser nicht unterstützt.');return}let r=new SR();r.lang='de-DE';r.onresult=e=>{$('prompt').value=e.results[0][0].transcript;send()};r.onerror=()=>alert('Mikrofon nicht verfügbar oder keine Freigabe.');r.start()};
+function load(){let a=JSON.parse(localStorage.getItem('shaifulDemoMemory')||'[]'),list=$('memoryList');list.replaceChildren();a.forEach((v,i)=>{let row=document.createElement('div');row.style.cssText='display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #333';let s=document.createElement('span');s.textContent=v;let b=document.createElement('button');b.textContent='Löschen';b.className='btn secondary small';b.onclick=()=>{a.splice(i,1);localStorage.setItem('shaifulDemoMemory',JSON.stringify(a));load()};row.append(s,b);list.append(row)})}
+$('saveMemory').onclick=()=>{let v=$('memoryInput').value.trim();if(!v)return;let a=JSON.parse(localStorage.getItem('shaifulDemoMemory')||'[]');a.push(v);localStorage.setItem('shaifulDemoMemory',JSON.stringify(a));$('memoryInput').value='';load()};
+$('clearMemory').onclick=()=>{if(confirm('Alle lokalen Demo-Notizen löschen?')){localStorage.removeItem('shaifulDemoMemory');load()}};load();
+</script></body></html>
